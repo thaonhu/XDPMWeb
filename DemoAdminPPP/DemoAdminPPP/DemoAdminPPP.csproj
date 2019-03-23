@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09054AB0-9C95-499E-B76B-334ECE3282FB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DemoAdminPPP</RootNamespace>
+    <AssemblyName>DemoAdminPPP</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PPPController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Image.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order_Detail.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Publisher.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\image\ao\aokhoac1.jpg" />
+    <Content Include="Content\image\ao\aokhoac10.jpg" />
+    <Content Include="Content\image\ao\aokhoac2.jpg" />
+    <Content Include="Content\image\ao\aokhoac3.jpg" />
+    <Content Include="Content\image\ao\aokhoac4.jpg" />
+    <Content Include="Content\image\ao\aokhoac5.jpg" />
+    <Content Include="Content\image\ao\aokhoac6.jpg" />
+    <Content Include="Content\image\ao\aokhoac7.JPG" />
+    <Content Include="Content\image\ao\aokhoac8.JPG" />
+    <Content Include="Content\image\ao\aokhoac9.jpg" />
+    <Content Include="Content\image\ao_phat_quang\1.ao-phan-quang-nhua.jpg" />
+    <Content Include="Content\image\ao_phat_quang\2.ao-phan-quang-thun-mau-cam-1.jpg" />
+    <Content Include="Content\image\ao_phat_quang\3.ao-phan-quang-ghost-liner-0-1.jpg" />
+    <Content Include="Content\image\ao_phat_quang\4.áo-mưa-bịt-giá-rẻ.png" />
+    <Content Include="Content\image\ao_phat_quang\5.ao-mua-bo-givi-CRS02.jpg" />
+    <Content Include="Content\image\ao_phat_quang\6.dy-phan-quang-di-phuot-0.jpg" />
+    <Content Include="Content\image\ao_phat_quang\ao-gile-swat.png" />
+    <Content Include="Content\image\ao_phat_quang\ao-phan-quan-led.jpg" />
+    <Content Include="Content\image\ao_phat_quang\ao-phan-quang-luoi-chu-a.jpg" />
+    <Content Include="Content\image\ao_phat_quang\day ao phan quang mau do.JPG" />
+    <Content Include="Content\image\dao_da_nang\10.jpg" />
+    <Content Include="Content\image\dao_da_nang\11.jpg" />
+    <Content Include="Content\image\dao_da_nang\12.jpg" />
+    <Content Include="Content\image\dao_da_nang\2.Dao-da-nang-VICTORINOX-Nail-Clip.jpg" />
+    <Content Include="Content\image\dao_da_nang\3.Victorino.jpg" />
+    <Content Include="Content\image\dao_da_nang\4.Dao-xep-da-nang-SwissTech-Folding-Rescue-Knife.jpg" />
+    <Content Include="Content\image\dao_da_nang\5.Dao-da-nang-VICTORINOX-Spatan.jpg" />
+    <Content Include="Content\image\dao_da_nang\6Dao-da-nang-VICTORINOX-Spatan-Silver-Tech.jpg" />
+    <Content Include="Content\image\dao_da_nang\7.jpg" />
+    <Content Include="Content\image\dao_da_nang\8.jpg" />
+    <Content Include="Content\image\dao_da_nang\9.jpg" />
+    <Content Include="Content\image\dao_da_nang\bo-dao-da-nang-bo-tui.jpg" />
+    <Content Include="Content\image\dao_da_nang\dao-xep-dang-the-atm-da-nang-cohoimua-den.jpg" />
+    <Content Include="Content\image\dao_da_nang\kim.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\1.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\10.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\2.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\3.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\4.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\5.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\6.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\7.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\8.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\9.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\bo-2-co-le-da-nang.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\bo-ki-thuat-6-mon-kiem-den-pin-ca-nhan-nho-gon.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\bo-tua-vit-da-nang-31-dau-coc-tien-dung.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\bo-tua-vit-da-nang-8-trong-1-co-den-pin.jpg" />
+    <Content Include="Content\image\dung_cu_sua_xe\tay-quay-taroren-tu-dong-dai-100mm-m3-m8.jpg" />
+    <Content Include="Content\image\gang_tay\1.gang-tay-nua-ngon-pro-biker-gang-tay-xe-may-pro-biker-bao-ho-xe-may-yohe-.jpg" />
+    <Content Include="Content\image\gang_tay\2.gang-tay-fox-bommer-do.jpg" />
+    <Content Include="Content\image\gang_tay\3.gang-tay-xe-may-komine-gk-160-bao-ho-xe-may-yohe-shop-3.jpg" />
+    <Content Include="Content\image\gang_tay\4.gang-tay-xe-may-scoyco-mc23-2-1487661086-.jpg" />
+    <Content Include="Content\image\gang_tay\5.gang-tay-dai-scoyco-mc12-1-1487665803-.jpg" />
+    <Content Include="Content\image\gang_tay\6.gang-tay-dai-ngon-scoyco-mc20-8-1487665064-.jpg" />
+    <Content Include="Content\image\gang_tay\gang-tay-xe-may-pro-bike.jpg" />
+    <Content Include="Content\image\gang_tay\gtxm-mscoyco-mc24.jpg" />
+    <Content Include="Content\image\gang_tay\huong-dan-do-size-gang-tay-xe-may%281%29.JPG" />
+    <Content Include="Content\image\giap_goi\1.giap-bao-ho-tay-chan-inox-ktm-1-jpg.jpg" />
+    <Content Include="Content\image\giap_goi\2.giap-bao-ho-tay-chan-gxt-1.jpg" />
+    <Content Include="Content\image\giap_goi\3.1150463bo-bao-ho-goi-probiker.png" />
+    <Content Include="Content\image\giap_goi\4.bo-bo-goi-bao-ve-tay-chan-scoyco-k11.jpg" />
+    <Content Include="Content\image\giap_goi\5.boc-goi-inox-bao-ho-chan-tay-i-xe-may.jpg" />
+    <Content Include="Content\image\giap_goi\6.Untitled-1-1440480628-.jpg" />
+    <Content Include="Content\image\la_ban\1.tải xuống.jpg" />
+    <Content Include="Content\image\la_ban\2.tải xuống.jpg" />
+    <Content Include="Content\image\la_ban\3.tải xuống.jpg" />
+    <Content Include="Content\image\la_ban\4.tải xuống.jpg" />
+    <Content Include="Content\image\la_ban\5.tải xuống.jpg" />
+    <Content Include="Content\image\la_ban\6.tải xuống.jpg" />
+    <Content Include="Content\image\mu_bao_hiem\1.nón-fullface-royal-600x600-gia550.000.png" />
+    <Content Include="Content\image\mu_bao_hiem\2.mũ-bảo-hiểm-3-4-đầu-royal.png" />
+    <Content Include="Content\image\mu_bao_hiem\3.non-bao-hiem-3-4-yohe-868-camo-2-1491789122-.jpg" />
+    <Content Include="Content\image\mu_bao_hiem\4.non-bao-hiem-thai-lan-index-dunk-.jpg" />
+    <Content Include="Content\image\mu_bao_hiem\5.29570805_1620140201355101_1014087087903425677_n.jpg" />
+    <Content Include="Content\image\mu_bao_hiem\6.yohe-967-den-vang_master_1.jpg" />
+    <Content Include="Content\image\ong_hut_xang\2.TIETKIEMXANGXEGA1_thumb_557x600.jpg" />
+    <Content Include="Content\image\ong_hut_xang\images.jpg" />
+    <Content Include="Content\image\y_te\1.tải xuống.jpg" />
+    <Content Include="Content\image\y_te\2.tải xuống.jpg" />
+    <Content Include="Content\image\y_te\3.tải xuống.jpg" />
+    <Content Include="Content\image\y_te\4.tải xuống.jpg" />
+    <Content Include="Content\image\y_te\5..jpg" />
+    <Content Include="Content\image\y_te\6.tải xuống.jpg" />
+    <Content Include="Content\image\y_te\7.tải xuống.jpg" />
+    <Content Include="Content\image\y_te\8.tải xuống.jpg" />
+    <Content Include="Content\image\y_te\9.tải xuống.jpg" />
+    <Content Include="Content\startmin-master\css\bootstrap-social.css" />
+    <Content Include="Content\startmin-master\css\bootstrap-theme.min.css" />
+    <Content Include="Content\startmin-master\css\bootstrap.min.css" />
+    <Content Include="Content\startmin-master\css\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Content\startmin-master\css\dataTables\dataTables.responsive.css" />
+    <Content Include="Content\startmin-master\css\font-awesome.min.css" />
+    <Content Include="Content\startmin-master\css\metisMenu.min.css" />
+    <Content Include="Content\startmin-master\css\morris.css" />
+    <Content Include="Content\startmin-master\css\startmin.css" />
+    <Content Include="Content\startmin-master\css\timeline.css" />
+    <Content Include="Content\startmin-master\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\startmin-master\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\startmin-master\index.html" />
+    <Content Include="Content\startmin-master\js\bootstrap.min.js" />
+    <Content Include="Content\startmin-master\js\dataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Content\startmin-master\js\dataTables\jquery.dataTables.min.js" />
+    <Content Include="Content\startmin-master\js\flot-data.js" />
+    <Content Include="Content\startmin-master\js\flot\excanvas.min.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.colorhelpers.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.canvas.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.categories.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.crosshair.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.errorbars.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.image.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.navigate.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.pie.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.resize.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.selection.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.stack.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.symbol.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.threshold.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.time.js" />
+    <Content Include="Content\startmin-master\js\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Content\startmin-master\js\jquery.min.js" />
+    <Content Include="Content\startmin-master\js\metisMenu.min.js" />
+    <Content Include="Content\startmin-master\js\morris-data.js" />
+    <Content Include="Content\startmin-master\js\morris.min.js" />
+    <Content Include="Content\startmin-master\js\raphael.min.js" />
+    <Content Include="Content\startmin-master\js\startmin.js" />
+    <Content Include="Content\startmin-master\pages\blank.html" />
+    <Content Include="Content\startmin-master\pages\buttons.html" />
+    <Content Include="Content\startmin-master\pages\flot.html" />
+    <Content Include="Content\startmin-master\pages\forms.html" />
+    <Content Include="Content\startmin-master\pages\grid.html" />
+    <Content Include="Content\startmin-master\pages\icons.html" />
+    <Content Include="Content\startmin-master\pages\index.html" />
+    <Content Include="Content\startmin-master\pages\login.html" />
+    <Content Include="Content\startmin-master\pages\morris.html" />
+    <Content Include="Content\startmin-master\pages\notifications.html" />
+    <Content Include="Content\startmin-master\pages\panels-wells.html" />
+    <Content Include="Content\startmin-master\pages\tables.html" />
+    <Content Include="Content\startmin-master\pages\typography.html" />
+    <Content Include="Content\startmin-master\TEMPLATE.html" />
+    <Content Include="Content\templateweb\1.html" />
+    <Content Include="Content\templateweb\about.html" />
+    <Content Include="Content\templateweb\a_layout.html" />
+    <Content Include="Content\templateweb\bread.html" />
+    <Content Include="Content\templateweb\checkout.html" />
+    <Content Include="Content\templateweb\css\bootstrap.css" />
+    <Content Include="Content\templateweb\css\creditly.css" />
+    <Content Include="Content\templateweb\css\easy-responsive-tabs.css" />
+    <Content Include="Content\templateweb\css\flexslider.css" />
+    <Content Include="Content\templateweb\css\font-awesome.css" />
+    <Content Include="Content\templateweb\css\style.css" />
+    <Content Include="Content\templateweb\drinks.html" />
+    <Content Include="Content\templateweb\events.html" />
+    <Content Include="Content\templateweb\faqs.html" />
+    <Content Include="Content\templateweb\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\templateweb\frozen.html" />
+    <Content Include="Content\templateweb\household.html" />
+    <Content Include="Content\templateweb\images\1.jpg" />
+    <Content Include="Content\templateweb\images\1.png" />
+    <Content Include="Content\templateweb\images\10.jpg" />
+    <Content Include="Content\templateweb\images\10.png" />
+    <Content Include="Content\templateweb\images\11.jpg" />
+    <Content Include="Content\templateweb\images\11.png" />
+    <Content Include="Content\templateweb\images\12.jpg" />
+    <Content Include="Content\templateweb\images\12.png" />
+    <Content Include="Content\templateweb\images\13.jpg" />
+    <Content Include="Content\templateweb\images\13.png" />
+    <Content Include="Content\templateweb\images\14.jpg" />
+    <Content Include="Content\templateweb\images\14.png" />
+    <Content Include="Content\templateweb\images\15.jpg" />
+    <Content Include="Content\templateweb\images\15.png" />
+    <Content Include="Content\templateweb\images\16.jpg" />
+    <Content Include="Content\templateweb\images\16.png" />
+    <Content Include="Content\templateweb\images\17.jpg" />
+    <Content Include="Content\templateweb\images\17.png" />
+    <Content Include="Content\templateweb\images\18.jpg" />
+    <Content Include="Content\templateweb\images\18.png" />
+    <Content Include="Content\templateweb\images\19.jpg" />
+    <Content Include="Content\templateweb\images\19.png" />
+    <Content Include="Content\templateweb\images\2.jpg" />
+    <Content Include="Content\templateweb\images\2.png" />
+    <Content Include="Content\templateweb\images\20.jpg" />
+    <Content Include="Content\templateweb\images\20.png" />
+    <Content Include="Content\templateweb\images\21.jpg" />
+    <Content Include="Content\templateweb\images\21.png" />
+    <Content Include="Content\templateweb\images\22.jpg" />
+    <Content Include="Content\templateweb\images\22.png" />
+    <Content Include="Content\templateweb\images\23.jpg" />
+    <Content Include="Content\templateweb\images\23.png" />
+    <Content Include="Content\templateweb\images\24.jpg" />
+    <Content Include="Content\templateweb\images\24.png" />
+    <Content Include="Content\templateweb\images\25.jpg" />
+    <Content Include="Content\templateweb\images\25.png" />
+    <Content Include="Content\templateweb\images\26.jpg" />
+    <Content Include="Content\templateweb\images\26.png" />
+    <Content Include="Content\templateweb\images\27.jpg" />
+    <Content Include="Content\templateweb\images\27.png" />
+    <Content Include="Content\templateweb\images\28.jpg" />
+    <Content Include="Content\templateweb\images\28.png" />
+    <Content Include="Content\templateweb\images\29.jpg" />
+    <Content Include="Content\templateweb\images\29.png" />
+    <Content Include="Content\templateweb\images\3.jpg" />
+    <Content Include="Content\templateweb\images\3.png" />
+    <Content Include="Content\templateweb\images\30.jpg" />
+    <Content Include="Content\templateweb\images\30.png" />
+    <Content Include="Content\templateweb\images\31.jpg" />
+    <Content Include="Content\templateweb\images\31.png" />
+    <Content Include="Content\templateweb\images\32.jpg" />
+    <Content Include="Content\templateweb\images\32.png" />
+    <Content Include="Content\templateweb\images\33.jpg" />
+    <Content Include="Content\templateweb\images\33.png" />
+    <Content Include="Content\templateweb\images\34.jpg" />
+    <Content Include="Content\templateweb\images\34.png" />
+    <Content Include="Content\templateweb\images\35.jpg" />
+    <Content Include="Content\templateweb\images\35.png" />
+    <Content Include="Content\templateweb\images\36.png" />
+    <Content Include="Content\templateweb\images\37.png" />
+    <Content Include="Content\templateweb\images\38.png" />
+    <Content Include="Content\templateweb\images\39.png" />
+    <Content Include="Content\templateweb\images\4.jpg" />
+    <Content Include="Content\templateweb\images\4.png" />
+    <Content Include="Content\templateweb\images\40.png" />
+    <Content Include="Content\templateweb\images\41.png" />
+    <Content Include="Content\templateweb\images\42.png" />
+    <Content Include="Content\templateweb\images\43.png" />
+    <Content Include="Content\templateweb\images\44.png" />
+    <Content Include="Content\templateweb\images\45.png" />
+    <Content Include="Content\templateweb\images\46.png" />
+    <Content Include="Content\templateweb\images\47.png" />
+    <Content Include="Content\templateweb\images\48.png" />
+    <Content Include="Content\templateweb\images\49.png" />
+    <Content Include="Content\templateweb\images\5.jpg" />
+    <Content Include="Content\templateweb\images\5.png" />
+    <Content Include="Content\templateweb\images\50.png" />
+    <Content Include="Content\templateweb\images\51.png" />
+    <Content Include="Content\templateweb\images\52.png" />
+    <Content Include="Content\templateweb\images\53.png" />
+    <Content Include="Content\templateweb\images\54.png" />
+    <Content Include="Content\templateweb\images\55.png" />
+    <Content Include="Content\templateweb\images\56.png" />
+    <Content Include="Content\templateweb\images\57.png" />
+    <Content Include="Content\templateweb\images\58.png" />
+    <Content Include="Content\templateweb\images\59.png" />
+    <Content Include="Content\templateweb\images\6.jpg" />
+    <Content Include="Content\templateweb\images\6.png" />
+    <Content Include="Content\templateweb\images\60.png" />
+    <Content Include="Content\templateweb\images\61.png" />
+    <Content Include="Content\templateweb\images\62.png" />
+    <Content Include="Content\templateweb\images\63.png" />
+    <Content Include="Content\templateweb\images\64.png" />
+    <Content Include="Content\templateweb\images\65.png" />
+    <Content Include="Content\templateweb\images\66.png" />
+    <Content Include="Content\templateweb\images\67.png" />
+    <Content Include="Content\templateweb\images\68.png" />
+    <Content Include="Content\templateweb\images\69.png" />
+    <Content Include="Content\templateweb\images\7.jpg" />
+    <Content Include="Content\templateweb\images\7.png" />
+    <Content Include="Content\templateweb\images\70.png" />
+    <Content Include="Content\templateweb\images\71.png" />
+    <Content Include="Content\templateweb\images\72.png" />
+    <Content Include="Content\templateweb\images\73.png" />
+    <Content Include="Content\templateweb\images\74.png" />
+    <Content Include="Content\templateweb\images\75.png" />
+    <Content Include="Content\templateweb\images\76.png" />
+    <Content Include="Content\templateweb\images\8.jpg" />
+    <Content Include="Content\templateweb\images\8.png" />
+    <Content Include="Content\templateweb\images\9.jpg" />
+    <Content Include="Content\templateweb\images\9.png" />
+    <Content Include="Content\templateweb\images\arrow.png" />
+    <Content Include="Content\templateweb\images\card.png" />
+    <Content Include="Content\templateweb\images\cart.png" />
+    <Content Include="Content\templateweb\images\close_1.png" />
+    <Content Include="Content\templateweb\images\img-sp.png" />
+    <Content Include="Content\templateweb\images\offer.png" />
+    <Content Include="Content\templateweb\images\paypal.png" />
+    <Content Include="Content\templateweb\images\star.png" />
+    <Content Include="Content\templateweb\images\star1.png" />
+    <Content Include="Content\templateweb\images\tag.png" />
+    <Content Include="Content\templateweb\index.html" />
+    <Content Include="Content\templateweb\js\bootstrap.min.js" />
+    <Content Include="Content\templateweb\js\counterup.min.js" />
+    <Content Include="Content\templateweb\js\creditly.js" />
+    <Content Include="Content\templateweb\js\easing.js" />
+    <Content Include="Content\templateweb\js\easyResponsiveTabs.js" />
+    <Content Include="Content\templateweb\js\jquery-1.11.1.min.js" />
+    <Content Include="Content\templateweb\js\jquery.flexslider.js" />
+    <Content Include="Content\templateweb\js\jquery.wmuSlider.js" />
+    <Content Include="Content\templateweb\js\minicart.js" />
+    <Content Include="Content\templateweb\js\move-top.js" />
+    <Content Include="Content\templateweb\js\okzoom.js" />
+    <Content Include="Content\templateweb\js\waypoints.min.js" />
+    <Content Include="Content\templateweb\kitchen.html" />
+    <Content Include="Content\templateweb\login.html" />
+    <Content Include="Content\templateweb\mail.html" />
+    <Content Include="Content\templateweb\payment.html" />
+    <Content Include="Content\templateweb\pet.html" />
+    <Content Include="Content\templateweb\privacy.html" />
+    <Content Include="Content\templateweb\products.html" />
+    <Content Include="Content\templateweb\services.html" />
+    <Content Include="Content\templateweb\short-codes.html" />
+    <Content Include="Content\templateweb\single.html" />
+    <Content Include="Content\templateweb\vegetables.html" />
+    <Content Include="Content\templateweb\w3layouts-License.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\startmin-master\.gitignore" />
+    <Content Include="Content\startmin-master\composer.json" />
+    <Content Include="Content\startmin-master\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\startmin-master\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\startmin-master\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\startmin-master\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\startmin-master\fonts\FontAwesome.otf" />
+    <Content Include="Content\startmin-master\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\startmin-master\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\startmin-master\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\startmin-master\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\startmin-master\LICENSE" />
+    <Content Include="Content\startmin-master\README.md" />
+    <Content Include="Content\templateweb\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\templateweb\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\templateweb\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\templateweb\fonts\FontAwesome.otf" />
+    <Content Include="Content\templateweb\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\templateweb\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\image\ao\Thumbs.db" />
+    <Content Include="Content\image\ao\~%24q.docx" />
+    <Content Include="Content\image\ao_phat_quang\Thumbs.db" />
+    <Content Include="Content\image\dao_da_nang\Thumbs.db" />
+    <Content Include="Content\image\dung_cu_sua_xe\Thumbs.db" />
+    <Content Include="Content\image\gang_tay\Thumbs.db" />
+    <Content Include="Content\image\giap_goi\Thumbs.db" />
+    <Content Include="Content\image\la_ban\Thumbs.db" />
+    <Content Include="Content\image\mu_bao_hiem\Thumbs.db" />
+    <Content Include="Content\image\ong_hut_xang\Thumbs.db" />
+    <Content Include="Content\image\y_te\Thumbs.db" />
+    <EntityDeploy Include="Models\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_LayoutPPP.cshtml" />
+    <Content Include="Views\PPP\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\PPP\SanPham.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Images\Create.cshtml" />
+    <Content Include="Views\Images\Delete.cshtml" />
+    <Content Include="Views\Images\Details.cshtml" />
+    <Content Include="Views\Images\Edit.cshtml" />
+    <Content Include="Views\Images\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63768</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63768/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
