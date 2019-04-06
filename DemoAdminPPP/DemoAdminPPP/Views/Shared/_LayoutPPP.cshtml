@@ -35,27 +35,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
     <!-- start-smoth-scrolling -->
 </head>
-
+@*tìm kiếm sản phẩm*@
+@section Scripts
+{
+    <script>
+        function empty() {
+            var x = $('').val();
+            if (x == " " || x == null) {
+                return false;
+            }
+        }
+    </script>
+}
 <body>
+
     <!-- header -->
     <div class="agileits_header">
         <div class="w3l_offers">
             <a href="products.html">Sắm ngay bộ giáp nào!</a>
         </div>
         <div class="w3l_search">
-            <form action="#" method="post">
-                <input type="text" name="Product" value="Tìm sản phẩm..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
-                <input type="submit" value=" ">
-            </form>
+            @using (Html.BeginForm("Timkiem", "PPP", FormMethod.Get))
+            {
+                <p>
+                    @Html.TextBox("tukhoa")
+                    <input type="submit" onsubmit=" empty();" value="" required />
+                </p>
+            }
         </div>
+        @*tìm kiếm sản phẩm*@
         <div class="product_list_header">
-            <form action="#" method="post" class="last">
-                <fieldset>
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
-                    <input type="submit" name="submit" value="Giỏ hàng" class="button" />
-                </fieldset>
+            @*<form action="@Url.Action("DatHang")" method="post" class="last">
+                    <fieldset>
+                        <input type="hidden" name="cmd" value="_cart" />
+                        <input type="hidden" name="display" value="1" />
+                        <input type="submit" name="submit" value="Giỏ hàng" class="button" />
+                    </fieldset>
+                </form>*@
+            <form>
+                @Html.ActionLink("giỏ hàng ", "Cart","PPP")
             </form>
+
         </div>
         <div class="w3l_header_right">
             <ul>
@@ -73,9 +93,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </ul>
         </div>
         @*<div class="w3l_header_right1">
-            <h2><a href="mail.html">húng tôi</a></h2>
+                <h2><a href="mail.html">húng tôi</a></h2>
 
-        </div>*@
+            </div>*@
         <div class="clearfix"> </div>
     </div>
     <!-- script-for sticky-nav -->
@@ -123,9 +143,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <ul>
                 <li><i class="fa fa-home" aria-hidden="true"></i><a href="Index">Trang chủ</a><span>|</span></li>
-                <li><a href="../PPP/SanPham">Quần áo</a><span>|</span></li>
+                <li><a href="@Url.Action("SanPham","PPP")">Quần áo</a><span>|</span></li>
                 <li><a href="#">Giáp bảo hộ</a><span>|</span></li>
-                <li><a href="#">Găng tay</a><span>|</span></li>
+                <li><a href="@Url.Action("GangTay","PPP")">Găng tay</a><span>|</span></li>
                 <li><a href="#">Nón bảo hộ</a></li>
 
             </ul>
@@ -216,7 +236,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
                     <div class="w3_footer_grid_bottom">
-                        <h5>K?t n?i v?i chúng tôi nào</h5>
+                        <h5>Kết nối với chúng tôi nào</h5>
                         <ul class="agileits_social_icons">
                             <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                             <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -278,14 +298,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 i;
 
             // Count the number of each item in the cart
-            for (i = 0; i < len; i++) {
-                total += items[i].get('quantity');
-            }
+            //for (i = 0; i < len; i++) {
+            //    total += items[i].get('quantity');
+            //}
 
-            if (total < 3) {
-                alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
-                evt.preventDefault();
-            }
+            //if (total < 3) {
+            //    alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
+            //    evt.preventDefault();
+            //}
         });
 
     </script>

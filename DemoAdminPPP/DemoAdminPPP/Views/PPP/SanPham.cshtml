@@ -3,65 +3,73 @@
 @{
     ViewBag.Title = "SanPham";
     Layout = "~/Views/Shared/_LayoutPPP.cshtml";
-    var img = 1;
+    var str = ".jpg";
 }
 
-<h2>Tất cả sản phẩm</h2>
 
 <div class="top-brands">
     <div class="container">
-        <h3>Hot Offers</h3>
-        <div class="agile_top_brands_grids">
-            
-            @foreach (var item in Model)
+            <h3>Quần áo</h3>
+            @foreach (var item in ViewBag.product)
             {
-                
-                var chuoi = "aokhoac" + img +".jpg";
-            <div class="col-md-3 top_brand_left">
-                <div class="hover14 column">
-                    <div class="agile_top_brand_left_grid">
-                        <div class="tag">
-                            
-                            <img src="~/Content/templateweb/images/tag.png" alt=" " class="img-responsive" />
-                        </div>
-                        <div class="agile_top_brand_left_grid1">
-                            <figure>
-                                <div class="snipcart-item block">
-                                    <div class="snipcart-thumb">
-                                        <a href="single.html">
-                                            <img src="~/Content/image/ao/@chuoi"/>
-                                        </a>
-                                        <p>@Html.DisplayFor(modelItem => item.product_name)</p>
-                                        <h4>Giá: @Html.DisplayFor(modelItem => item.price) <span>$10.00</span></h4>
+                if (item.category_id == "QA")
+                {
+                    <div class="agile_top_brands_grids">
+
+
+
+                        <div class="col-md-3 top_brand_left">
+                            <div class="hover14 column">
+                                <div class="agile_top_brand_left_grid">
+                                    <div class="tag">
+                                        <img src="~/Content/templateweb/images/tag.png" alt=" " class="img-responsive" />
                                     </div>
-                                    <div class="snipcart-details top_brand_home_details">
-                                        <form action="checkout.html" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Fortune Sunflower Oil" />
-                                                <input type="hidden" name="amount" value="7.99" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
+                                    <div class="agile_top_brand_left_grid1">
+                                        <figure>
+                                            <div class="snipcart-item block">
+                                                <div class="snipcart-thumb">
+                                                    <a href="@Url.Action("ViewDetail", "PPP", new { id = item.product_id })">
+                                                        @foreach (var img in ViewBag.img)
+                                                        {
+                                                            if (img.product_id == item.product_id)
+                                                            {
+                                                                <img title=" " alt=" " src="~/Content/image/@img.image_name@str" width="200px" height="174px"/>
 
-                                        </form>
-
+                                                            }
+                                                        }
+                                                    </a>
+                                                    <p style="text-align:center">@item.product_name</p>
+                                                    <h4 style="text-align:center">@item.price vnđ</h4>
+                                                </div>
+                                                <div class="snipcart-details top_brand_home_details">
+                                                    <form action="checkout.html" method="post">
+                                                        <fieldset>
+                                                            <input type="hidden" name="cmd" value="_cart" />
+                                                            <input type="hidden" name="add" value="1" />
+                                                            <input type="hidden" name="business" value=" " />
+                                                            <input type="hidden" name="item_name" value="Fortune Sunflower Oil" />
+                                                            <input type="hidden" name="amount" value="7.99" />
+                                                            <input type="hidden" name="discount_amount" value="1.00" />
+                                                            <input type="hidden" name="currency_code" value="USD" />
+                                                            <input type="hidden" name="return" value=" " />
+                                                            <input type="hidden" name="cancel_return" value=" " />
+                                                            <input type="submit" name="submit" value="Add to cart" class="button" />
+                                                        </fieldset>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </figure>
                                     </div>
                                 </div>
-                            </figure>
+                            </div>
                         </div>
+
+
+
+
                     </div>
-                </div>
-            </div>
-                img++;
+                }
             }
-            
             <div class="clearfix"> </div>
         </div>
     </div>
-</div>

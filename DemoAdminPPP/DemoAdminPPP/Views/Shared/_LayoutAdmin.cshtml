@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    DemoAdminPPP.UserLogin us = (DemoAdminPPP.UserLogin)Session["USER_SESSION"];
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -70,14 +73,15 @@
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> secondtruth <b class="caret"></b>
+
+                        <i class="fa fa-user fa-fw"></i> @us.UserName <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> Thông tin</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            <a href="#"><i class="fa fa-gear fa-fw"></i> Cài đặt</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -111,31 +115,16 @@
                                     <a href="Users">Người dùng</a>
                                 </li>
                                 <li>
-                                    <a href="#">Hình ảnh</a>
+                                    <a href="Images">Hình ảnh</a>
                                 </li>
                                 <li>
-                                    <a href="#">Nhà sản xuất</a>
+                                    <a href="Publishers">Nhà sản xuất</a>
                                 </li>
-                                <li>
-                                    <a href="#">Danh mục sản phẩm</a>
-                                </li>
+                                
                                 <li>
                                     <a href="Products">Sản phẩm</a>
                                 </li>
-                                <li>
-                                    <a href="Products">Sản phẩm <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Nón bảo hộ</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Găng tay</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Quần áo</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                
                             </ul>
                         </li>
                     </ul>

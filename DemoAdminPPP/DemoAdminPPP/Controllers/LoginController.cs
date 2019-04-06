@@ -26,7 +26,12 @@ namespace DemoAdminPPP.Controllers
                 var res = user.Login(n, p);
                 if (res)
                 {
-                    return RedirectToAction("Index", "Admin");
+                    var us = user.GetIDUser(n);
+                    var userLogin = new UserLogin();
+                    userLogin.UserName = us.users_name;
+                    userLogin.UserID = us.users_id;
+                    Session.Add(Common.CommonContants.USER_SESSION, userLogin);
+                    return RedirectToAction("Index", "Admin",new { name = n});
                 }
                 else
                 {
@@ -35,7 +40,8 @@ namespace DemoAdminPPP.Controllers
                     return RedirectToAction("Index", "Login");
                 }
             }
-            return View();
+            
+            return View("Index");
         }
     }
 }

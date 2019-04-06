@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    DemoAdminPPP.UserLogin us = (DemoAdminPPP.UserLogin)Session["USER_SESSION"];
 }
-@*@using (Html.BeginForm("Login", "Index", FormMethod.Post))*@
-
+<span>@us.UserName</span>
 
